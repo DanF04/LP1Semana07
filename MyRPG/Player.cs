@@ -36,6 +36,18 @@
             get => 100f + (Level - 1) * 20f;
         }
 
+        public Player(string name)
+        {
+            this.Name = name;
+            xp = 0;
+            Health = MaxHealth;
+        }
+
+        public void TakeDamage(float damage)
+        {
+            Health -= damage;
+            XP += (int)damage / 20;
+        }
 
     }
 }
