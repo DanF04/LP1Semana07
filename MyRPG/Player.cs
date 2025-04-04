@@ -1,16 +1,18 @@
 ﻿using System;
 
-{
 
     public class Player
     {
-        private int XP
-        private float health
+        private int xp;
+        private float health;
         public string Name { get; }
 
         public int XP
         {
-            get => xp;
+            get
+            {
+                return xp;
+            }
             set
             {
                 if (value > xp) xp = value;
@@ -50,4 +52,3 @@
         }
 
     }
-}
