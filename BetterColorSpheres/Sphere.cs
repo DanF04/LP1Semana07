@@ -1,12 +1,25 @@
-﻿using System;
-
-namespace BetterColorSpheres
+﻿namespace BetterColorSpheres
 {
-    public class Program
+    public class Sphere
     {
-        private static void Main(string[] args)
+
+        public Color color { get;  }
+        private float radius { get; set;  }
+        private int _shot { get; set; } = 0;
+        
+        public Sphere(Color color, float radius)
         {
-            Console.WriteLine("Hello LP1!");
+            this.color = color;
+            this.radius = radius;
         }
+
+        public void Pop() => radius = 0;
+
+        public void Throw()
+        {
+            if (radius > 0) _shot++;
+        }
+
+        public int GetTimesThrown() => _shot;
     }
 }
