@@ -10,26 +10,32 @@
 
         public int XP
         {
-            get => return xp;
+            get => xp;
+            set
+            {
+                if (value > xp) xp = value;
+            }
         }
-
         public int Level
         {
             get => 1 + XP/1000;
         }
         public float Health
         {
-
-            get => return health;
-                
-
-            set => (health < 0) health = 0;
-                
+            get => health;
+            set
+            {
+                health = value;
+                if (health > MaxHealth) health = MaxHealth;
+                if (health < 0) health = 0;
+            }
         }
-
-        public float MaxHealth 
+        
+        public float MaxHealth
         {
-            get => 100 + (Level - 1) * 20
+            get => 100f + (Level - 1) * 20f;
         }
+
+
     }
 }
